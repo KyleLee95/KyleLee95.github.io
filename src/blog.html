@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en" class="dark:bg-obsidian text-offWhite">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>/blog | kylelee.dev</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body class="container mx-auto">
+    <header class="block lg:hidden">
+      <!-- Hidden Checkbox -->
+      <input type="checkbox" id="menu-toggle" class="hidden peer" />
+
+      <!-- Overlay (Blurs when menu is active) -->
+      <div
+        class="fixed inset-0 bg-black bg-opacity-40 hidden peer-checked:block lg:hidden backdrop-blur-sm transition-opacity duration-300 z-20"
+      ></div>
+      <label
+        for="menu-toggle"
+        class="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 cursor-pointer"
+      >
+        <span class="sr-only">Open main menu</span>
+        <svg
+          class="w-5 h-5"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 17 14"
+        >
+          <path
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M1 1h15M1 7h15M1 13h15"
+          />
+        </svg>
+      </label>
+
+      <!-- Responsive Navbar (Hidden by Default) -->
+      <aside
+        id="navbar-default"
+        class="fixed top-0 left-0 w-64 h-full bg-white dark:bg-obsidian transform -translate-x-full peer-checked:translate-x-0 transition-transform duration-300 z-30"
+      >
+        <div class="p-6 flex flex-col space-y-6 h-full">
+          <!-- Close Button -->
+          <div class="flex justify-end">
+            <label
+              for="menu-toggle"
+              class="cursor-pointer text-2xl hover:text-red-500"
+            >
+              &times;
+            </label>
+          </div>
+
+          <nav>
+            <ul class="bg-white dark:bg-obsidian p-4 rounded-md space-y-2">
+              <li>
+                <a
+                  href="./index.html"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+                  >/index</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./blog.html"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+                  >/blog</a
+                >
+              </li>
+              <li>
+                <a
+                  href="./about.html"
+                  class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800 rounded"
+                  >/about</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+    </header>
+
+    <!-- Sidebar for Larger Screens -->
+    <aside class="hidden lg:block mt-20">
+      <nav>
+        <ul>
+          <li>
+            <a href="./index.html">/index</a>
+          </li>
+          <li>
+            <a href="./blog.html">/blog</a>
+          </li>
+          <li>
+            <a href="./about.html">/about</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <!-- Main Content (Blurs when menu is active) -->
+    <main class="relative z-10 peer-checked:blur-md transition duration-300">
+      <div class="text-center mt-20">
+        <h1 class="text-4xl font-bold mb-4">Page Load Time</h1>
+        <p class="text-xl text-gray-700">
+          This page loaded in
+          <span id="load-time" class="font-semibold text-blue-500"></span>
+          seconds.
+        </p>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
