@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes } from 'astro/types';
+import "../styles/tailwind.css"
+type Props = HTMLAttributes<'a'>;
+
+const { href, class: className, ...props } = Astro.props;
+const pathname = Astro.url.pathname.replace(import.meta.env.BASE_URL, '');
+const subpath = pathname.match(/[^\/]+/g);
+const isActive = href === pathname || href === '/' + (subpath?.[0] || '');
+---
+
+<a
+	href={href}
+
+  class={`${className} ${isActive ? 'text-blue-500 font-bold underline' : 'text-blue-500'}`}
+	{...props}>
+	<slot />
+</a>
