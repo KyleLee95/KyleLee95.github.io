@@ -10,16 +10,15 @@ type Props = CollectionEntry<'blog'>['data'];
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en" class="mx-auto w-full h-full antialiased">
+<html lang="en" class="mx-auto w-full h-full antialiased bg-offWhite">
 	<head>
 		<BaseHead title={title} description={description} />
 	</head>
 
-	<body>
+	<body class="container">
 		<Header />
-		<main >
+		<main>
 			<article class="prose max-w-prose mx-auto">
-				<div>
 					<div class="mb-5 pl-1">
 						<div class="date">
 							<FormattedDate date={pubDate} />
@@ -35,7 +34,6 @@ const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 						<hr />
 					</div>
 					<slot />
-				</div>
 			</article>
 		</main>
 		<Footer />
