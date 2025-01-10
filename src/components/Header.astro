@@ -4,16 +4,15 @@ import { SITE_TITLE } from '../consts';
 import "../styles/tailwind.css"
 ---
 
-<header>
-	<nav class="flex items-center justify-between">
-		<h2><a href="/">{SITE_TITLE}</a></h2>
+<header class="m-0 px-0 py-4 bg-white">
+	<nav class="flex items-center justify-between mt-10">
+		<h2 class="m-0 leading-tight"><a href="/">{SITE_TITLE}</a></h2>
 		<div class="internal-links">
 			<HeaderLink class="px-1 py-0.5" href="/">Home</HeaderLink>
 			<HeaderLink class="px-1 py-0.5" href="/blog">Blog</HeaderLink>
-			<HeaderLink class="px-1 py-0.5" href="/about">About</HeaderLink>
 		</div>
-		<div class="social-links">
-			<a href="https://m.webtoo.ls/@astro" target="_blank">
+		<div class="hidden md:flex">
+			<a class="px-1" href="https://m.webtoo.ls/@astro" target="_blank">
 				<span class="sr-only">Follow Astro on Mastodon</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -22,7 +21,7 @@ import "../styles/tailwind.css"
 					></path></svg
 				>
 			</a>
-			<a href="https://twitter.com/astrodotbuild" target="_blank">
+			<a class="px-1" href="https://twitter.com/astrodotbuild" target="_blank">
 				<span class="sr-only">Follow Astro on Twitter</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -31,7 +30,7 @@ import "../styles/tailwind.css"
 					></path></svg
 				>
 			</a>
-			<a href="https://github.com/withastro/astro" target="_blank">
+			<a class="px-1" href="https://github.com/withastro/astro" target="_blank">
 				<span class="sr-only">Go to Astro's GitHub repo</span>
 				<svg viewBox="0 0 16 16" aria-hidden="true" width="32" height="32"
 					><path
@@ -43,37 +42,3 @@ import "../styles/tailwind.css"
 		</div>
 	</nav>
 </header>
-<style>
-	header {
-		margin: 0;
-		padding: 0 1em;
-		background: white;
-		box-shadow: 0 2px 8px rgba(var(--black), 5%);
-	}
-	h2 {
-		margin: 0;
-		font-size: 1em;
-	}
-
-	nav {
-		/* display: flex; */
-		/* align-items: center; */
-		/* justify-content: space-between; */
-	}
-	nav a {
-		/* padding: 1em 0.5em; */
-	}
-	nav a.active {
-		/* text-decoration: none; */
-		/* border-bottom-color: var(--accent); */
-	}
-	.social-links,
-	.social-links a {
-		display: flex;
-	}
-	@media (max-width: 720px) {
-		.social-links {
-			display: none;
-		}
-	}
-</style>

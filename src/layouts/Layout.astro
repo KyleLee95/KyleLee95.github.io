@@ -1,18 +1,22 @@
 ---
+import BaseHead from "../components/BaseHead.astro"
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
 import "../styles/tailwind.css"
+import {SITE_TITLE, SITE_DESCRIPTION} from "../consts"
 ---
 
 <!doctype html>
 <html lang="en" class="mx-auto w-full h-full antialiased">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 	</head>
-	<body>
-		<slot />
+
+	<body class="container">
+		<Header />
+		<main >
+		</main>
+		<Footer />
 	</body>
 </html>
 
