@@ -2,42 +2,38 @@
 import type { CollectionEntry } from "astro:content";
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import FormattedDate from "../components/FormattedDate.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/tailwind.css";
 type Props = CollectionEntry<"blog">["data"];
 
 const { title, description, pubDate, updatedDate, heroImage } = Astro.props;
 ---
 
-<html lang="en" class="mx-auto w-full h-full antialiased bg-offWhite">
-  <head>
-    <BaseHead title={title} description={description} />
-  </head>
-  <body class="container min-h-screen flex flex-col justify-between">
-    <Header />
-
-    <div class="flex justify-center mx-auto min-h-full w-full max-w-2xl mt-20">
-      <main>
-        <article class="prose max-w-prose">
-          <div class="m-auto pl-1">
-            <div class="date">
-              <FormattedDate date={pubDate} />
-              {
-                updatedDate && (
-                  <div class="italic">
-                    Last updated on <FormattedDate date={updatedDate} />
-                  </div>
-                )
-              }
-            </div>
-            <h1 class="mb-2">{title}</h1>
-            <hr />
-          </div>
-          <slot />
-        </article>
-      </main>
-      <Footer />
-    </div>
-  </body>
+<html lang="en" class="h-full w-full antialiased">
+	<head>
+		<BaseHead title={title} description={description} />
+	</head>
+	<body class="h-full w-full">
+		<Header />
+		<main class="mx-auto max-w-2xl px-8 mt-20">
+			<article class="prose">
+				<div>
+					<FormattedDate date={pubDate} />
+					{
+						updatedDate && (
+							<div class="italic">
+								Last updated on{" "}
+								<FormattedDate date={updatedDate} />
+							</div>
+						)
+					}
+				</div>
+				<h1 class="mb-2">{title}</h1>
+				<hr />
+				<slot />
+			</article>
+		</main>
+		<Footer />
+	</body>
 </html>
