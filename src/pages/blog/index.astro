@@ -6,9 +6,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../../consts";
 import { getCollection } from "astro:content";
 import FormattedDate from "../../components/FormattedDate.astro";
 import "../../styles/tailwind.css";
-const posts = (await getCollection("blog")).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf(),
-);
+const posts = (
+  await getCollection("blog", ({ data }) => {
+    return data.publish === true;
+  })
+).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
 ---
 
 <!doctype html>
@@ -20,7 +22,7 @@ const posts = (await getCollection("blog")).sort(
     <Header />
     <div class="flex flex-col mx-auto h-full w-full max-w-2xl mt-20">
       <main class="flex-grow">
-        <section class="max-w-prose px-8">
+        <section class="max-w-prose px-8 text-white">
           <ul>
             {
               posts.map((post) => (

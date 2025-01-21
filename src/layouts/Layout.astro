@@ -1,23 +1,22 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import Footer from "../components/Footer.astro";
 import "../styles/tailwind.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
 <!doctype html>
-<html lang="en" class="h-full antialiased">
-	<head>
-		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
-	</head>
+<html lang="en" class="antialiased">
+  <head>
+    <BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
 
-	<body>
-		<Header />
-		<div class="mx-auto h-full w-full max-w-2xl mt-20 overflow-auto">
-			<main>
-				<slot />
-			</main>
-		</div>
-	</body>
+  <body>
+    <Header />
+    <div class="mx-auto h-full w-full">
+      <main class="w-full flex items-center">
+        <slot />
+      </main>
+    </div>
+  </body>
 </html>
