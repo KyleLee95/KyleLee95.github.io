@@ -1,11 +1,11 @@
 ---
 import HeaderLink from "./HeaderLink.astro";
 import { SITE_TITLE } from "../consts";
-import "../styles/tailwind.css";
+import "../styles/global.css";
 ---
 
-<header class="mx-auto px-8 py-2 sticky top-0 bg-black text-white opacity-80">
-  <nav class="flex items-center justify-between mt-2 mb-0">
+<header class="mx-auto px-8 py-2 sticky top-0 text-white bg-black">
+  <nav class="flex items-center justify-between mt-2 mb-0 bg-black">
     <h2 class="m-0 leading-tight">
       <a href="/"><img src="/src/assets/icon.svg" alt={SITE_TITLE} /></a>
     </h2>

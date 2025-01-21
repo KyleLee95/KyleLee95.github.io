@@ -1,7 +1,7 @@
 ---
 import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
-import "../styles/tailwind.css";
+import "../styles/global.css";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 ---
 
@@ -14,7 +14,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
   <body>
     <Header />
     <div class="mx-auto h-full w-full">
-      <main class="w-full flex items-center">
+      <main class="h-full w-full">
         <slot />
       </main>
     </div>
